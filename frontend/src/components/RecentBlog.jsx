@@ -20,7 +20,7 @@ function RecentBlog() {
 
         const getAllPublsihedBlogs = async () => {
             try {
-                const res = await axios.get(`https://blog-sm.onrender.com/blog/get-published-blog`, { withCredentials: true })
+                const res = await axios.get(`https://blog-sm.onrender.com/api/v1/blog/get-published-blog`, { withCredentials: true })
                 if (res.data.success) {
                     dispatch(setBlog(res.data.blogs))
                 }

@@ -33,7 +33,7 @@ function CommentBox({ selectedBlog }) {
     useEffect(() => {
         const getAllCommentsOfBlog = async () => {
             try {
-                const res = await axios.get(`https://blog-sm.onrender.com/comment/${selectedBlog._id}/comment/all`)
+                const res = await axios.get(`https://blog-sm.onrender.com/api/v1/comment/${selectedBlog._id}/comment/all`)
                 const data = res.data.comments
                 dispatch(setComment(data))
             } catch (error) {
@@ -46,7 +46,7 @@ function CommentBox({ selectedBlog }) {
 
     const commentHandler = async () => {
         try {
-            const res = await axios.post(`https://blog-sm.onrender.com/comment/${selectedBlog._id}/create`, { content }, {
+            const res = await axios.post(`https://blog-sm.onrender.com/api/v1/comment/${selectedBlog._id}/create`, { content }, {
                 headers: {
                     "Content-Type": "application/json"
                 },
@@ -77,7 +77,7 @@ function CommentBox({ selectedBlog }) {
 
     const deleteComment = async (commentId) => {
         try {
-            const res = await axios.delete(`https://blog-sm.onrender.com/comment/${commentId}/delete`, {
+            const res = await axios.delete(`https://blog-sm.onrender.com/api/v1/comment/${commentId}/delete`, {
                 withCredentials: true
             })
             if (res.data.success) {
@@ -95,7 +95,7 @@ function CommentBox({ selectedBlog }) {
     const editCommentHandler = async (commentId) => {
             try {
                 const res = await axios.put(
-                    `https://blog-sm.onrender.com/comment/${commentId}/edit`,
+                    `https://blog-sm.onrender.com/api/v1/comment/${commentId}/edit`,
                     { content: editedContent },
                     {
                         withCredentials: true,
@@ -123,7 +123,7 @@ function CommentBox({ selectedBlog }) {
     const likeCommentHandler = async (commentId) => {
             try {
                 const res = await axios.get(
-                    `https://blog-sm.onrender.com/comment/${commentId}/like`,
+                    `https://blog-sm.onrender.com/api/v1/comment/${commentId}/like`,
                     {
                         withCredentials: true,
                     }

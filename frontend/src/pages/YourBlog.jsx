@@ -40,7 +40,7 @@ function YourBlog() {
 
   const getOwnBlogs = async () => {
     try {
-      const res = await axios.get(`https://blog-sm.onrender.com/blog/get-own-blogs`, { withCredentials: true })
+      const res = await axios.get(`https://blog-sm.onrender.com/api/v1/blog/get-own-blogs`, { withCredentials: true })
       if (res.data.success) {
         dispatch(setBlog((res.data.blogs)))
       }
@@ -51,7 +51,7 @@ function YourBlog() {
 
 const deleteBlog = async (id)=>{
   try {
-    const res = await axios.delete(`https://blog-sm.onrender.com/blog/delete/${id}`, { withCredentials: true })
+    const res = await axios.delete(`https://blog-sm.onrender.com/api/v1/blog/delete/${id}`, { withCredentials: true })
     if (res.data.success) {
         const updatedBlogData = blog.filter((blogItem) => blogItem?._id !== id);
         dispatch(setBlog(updatedBlogData))

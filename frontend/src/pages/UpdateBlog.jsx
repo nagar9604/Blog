@@ -71,7 +71,7 @@ function UpdateBlog() {
         formData.append("file", blogData.thumbnail);
         try {
             setLoading(true)
-            const res = await axios.put(`https://blog-sm.onrender.com/blog/${id}`, formData, {
+            const res = await axios.put(`https://blog-sm.onrender.com/api/v1/blog/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 },
@@ -97,7 +97,7 @@ function UpdateBlog() {
     const togglePublishUnpublish = async () => {
        
         try {
-            const res = await axios.patch(`https://blog-sm.onrender.com/blog/${id}`, {
+            const res = await axios.patch(`https://blog-sm.onrender.com/api/v1/blog/${id}`, {
                
                 withCredentials: true
             })
@@ -116,7 +116,7 @@ function UpdateBlog() {
 
     const deleteBlog = async () => {
         try {
-            const res = await axios.delete(`https://blog-sm.onrender.com/blog/delete/${id}`, { withCredentials: true })
+            const res = await axios.delete(`https://blog-sm.onrender.com/api/v1/blog/delete/${id}`, { withCredentials: true })
             if (res.data.success) {
                 const updatedBlogData = blog.filter((blogItem) => blogItem?._id !== id);
                 dispatch(setBlog(updatedBlogData))

@@ -40,7 +40,7 @@ const handleSubmit = async (e) => {
   console.log(input);
      try {
       dispatch(setLoading(true))
-       const res=await axios.post(`http://localhost:8000/api/v1/user/login`,input,({
+       const res=await axios.post(`https://blog-sm.onrender.com/user/login`,input,({
         headers:{
           "Content-Type":"application/json"
         },withCredentials:true

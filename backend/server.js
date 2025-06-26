@@ -20,7 +20,7 @@ app.use(cors({
     credentials:true
 }))
 
-const _dirname = path.resolve()
+const __dirname = path.resolve()
 
 const PORT=process.env.PORT || 3000
 

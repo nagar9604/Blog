@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon backend/server.js",
@@ -15,6 +15,7 @@
     "bcryptjs": "^3.0.2",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "cors": "^2.8.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.1",
     "nodemon": "^3.1.10"

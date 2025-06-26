@@ -1,6 +1,6 @@
 import RecentBlog from '@/components/RecentBlog'
 import Hero from '../components/Hero'
-import { Button } from '../components/ui/button'
+
 import React from 'react'
 import PopularAuthor from '@/components/PopularAuthor'
 
